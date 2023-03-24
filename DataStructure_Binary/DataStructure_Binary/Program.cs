@@ -9,6 +9,8 @@ class program
         search.ReadFile(@"F:\DataStructure_Binary\DataStructure_Binary\DataStructure_Binary\TextFile1.txt");
         InsertionSort insertionSort = new InsertionSort();
         insertionSort.ReadFile(@"F:\DataStructure_Binary\DataStructure_Binary\DataStructure_Binary\TextFile1.txt");
+        BubbleSort bubbleSort = new BubbleSort();
+        bubbleSort.ReadFile(@"F:\DataStructure_Binary\DataStructure_Binary\DataStructure_Binary\TextFileInteger.txt");
     }
 }
 
