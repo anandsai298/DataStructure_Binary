@@ -7,6 +7,8 @@ class program
     {
         BinarySearch search = new BinarySearch();
         search.ReadFile(@"F:\DataStructure_Binary\DataStructure_Binary\DataStructure_Binary\TextFile1.txt");
+        InsertionSort insertionSort = new InsertionSort();
+        insertionSort.ReadFile(@"F:\DataStructure_Binary\DataStructure_Binary\DataStructure_Binary\TextFile1.txt");
     }
 }
 
