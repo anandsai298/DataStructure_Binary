@@ -8,7 +8,7 @@ class program
         bool flag = true;
         while (flag) 
         {
-            Console.WriteLine("1.BinarySearch\n2.InsertionSort\n3.BubbleSort\n4.Anagram\n5.CustomizeString");
+            Console.WriteLine("1.BinarySearch\n2.InsertionSort\n3.BubbleSort\n4.Anagram\n5.CustomizeString\n6. LinkedListOperation");
             Console.WriteLine("select option to get output");
             int option=Convert.ToInt32(Console.ReadLine());
             switch(option)
@@ -32,6 +32,10 @@ class program
                 case 5:
                     CustomizeString customizeString = new CustomizeString();
                     customizeString.Customize();
+                    break;
+                case 6:
+                    LinkedListOperation linkedListOperation = new LinkedListOperation();
+                    linkedListOperation.ReadFile(@"F:\DataStructure_Binary\DataStructure_Binary\DataStructure_Binary\TextFile1.txt");
                     break;
             }
         }
