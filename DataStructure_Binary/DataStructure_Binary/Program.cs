@@ -11,6 +11,8 @@ class program
         insertionSort.ReadFile(@"F:\DataStructure_Binary\DataStructure_Binary\DataStructure_Binary\TextFile1.txt");
         BubbleSort bubbleSort = new BubbleSort();
         bubbleSort.ReadFile(@"F:\DataStructure_Binary\DataStructure_Binary\DataStructure_Binary\TextFileInteger.txt");
+        Anagram anagram=new Anagram();
+        anagram.CheckAnagram();
     }
 }
 
