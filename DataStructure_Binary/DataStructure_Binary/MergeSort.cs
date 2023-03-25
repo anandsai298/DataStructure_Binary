@@ -8,16 +8,28 @@ namespace DataStructure_Binary
 {
     public class MergeSort
     {
-        public static void Merge(List<string> list)
+        public void ReadFile(string FilePath)
         {
+            string readdata = File.ReadAllText(FilePath);
+            string[] words = readdata.Split(" ");
+            int[] arr = new int[words.Length];
+            int count = 0;
+            List<string> list = new List<string>();
+            Console.WriteLine("before merge sorting :");
+            foreach (var data in words)
+            {
+                arr[count] = Convert.ToInt32(data);
+                count++;
+                Console.WriteLine(data);
+            }
             if (list.Count > 1)
             {
                 int half = list.Count / 2;
                 List<string> left = list.GetRange(0, half);
                 List<string> right = list.GetRange(half, list.Count - half);
 
-                Merge(left);
-                Merge(right);
+                Console.WriteLine(left);
+                Console.WriteLine(right);
 
                 int i = 0, j = 0, k = 0;
                 while (i < left.Count && j < right.Count)
@@ -49,7 +61,6 @@ namespace DataStructure_Binary
                     k++;
                 }
             }
-
         }
     }
 }
