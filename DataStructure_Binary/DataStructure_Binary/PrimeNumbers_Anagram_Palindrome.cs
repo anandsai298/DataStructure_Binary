@@ -8,7 +8,7 @@ namespace DataStructure_Binary
 {
     public class PrimeNumbers_Anagram_Palindrome
     {
-        public void PrimeNumbers(int start,int end)
+        public bool PrimeNumbers(int start,int end)
         {
             Console.WriteLine("prime numbers between"+start+","+end);
             for(int i = start; i <= end;i++)
@@ -18,6 +18,7 @@ namespace DataStructure_Binary
                     Console.WriteLine(i);
                 }
             }
+            return false;
         }
         public static bool IsPrime(int num)
         {
@@ -25,7 +26,7 @@ namespace DataStructure_Binary
             {
                 return false;
             }
-            for (int i=2; i < Math.Sqrt(num); i++)
+            for (int i = 2; i < Math.Sqrt(num); i++)
             {
                 if (num % i == 0)
                 {
@@ -35,4 +36,6 @@ namespace DataStructure_Binary
             return true;
         }
     }
+
 }
+
