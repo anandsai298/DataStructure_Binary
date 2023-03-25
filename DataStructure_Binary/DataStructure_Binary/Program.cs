@@ -8,7 +8,7 @@ class program
         bool flag = true;
         while (flag) 
         {
-            Console.WriteLine("1.BinarySearch\n2.InsertionSort\n3.BubbleSort\n4.Anagram\n5.CustomizeString\n6. LinkedListOperation\n7.PrimeNumbers_Anagram_Palindrome\n8.OrderedList\n9.Simple_Balanced_Parentheses");
+            Console.WriteLine("1.BinarySearch\n2.InsertionSort\n3.BubbleSort\n4.Anagram\n5.CustomizeString\n6. LinkedListOperation\n7.PrimeNumbers_Anagram_Palindrome\n8.OrderedList\n9.Simple_Balanced_Parentheses\n10.SimulateBankingCashCounter");
             Console.WriteLine("select option to get output");
             int option=Convert.ToInt32(Console.ReadLine());
             switch(option)
@@ -48,6 +48,10 @@ class program
                 case 9:
                     Simple_Balanced_Parentheses simple_Balanced_Parentheses = new Simple_Balanced_Parentheses();
                     simple_Balanced_Parentheses.ReadFile(@"F:\DataStructure_Binary\DataStructure_Binary\DataStructure_Binary\BalancedParanthesis.txt");
+                    break;
+                case 10:
+                    SimulateBankingCashCounter simulateBankingCashCounter = new SimulateBankingCashCounter();
+                    simulateBankingCashCounter.BankOperation();
                     break;
             }
         }
