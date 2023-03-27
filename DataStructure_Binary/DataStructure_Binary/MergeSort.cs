@@ -8,59 +8,71 @@ namespace DataStructure_Binary
 {
     public class MergeSort
     {
-        public void ReadFile(string FilePath)
+        public void Merge(int[] arr, int l, int m, int r)
         {
-            string readdata = File.ReadAllText(FilePath);
-            string[] words = readdata.Split(" ");
-            int[] arr = new int[words.Length];
-            int count = 0;
-            List<string> list = new List<string>();
-            Console.WriteLine("before merge sorting :");
-            foreach (var data in words)
+            int n1 = m - l + 1;
+            int n2 = r - m;
+            int[] L = new int[n1];
+            int[] R = new int[n2];
+            for (int a = 0; a < n1; a++)
+                L[a] = arr[l + a];
+            for (int b = 0;  b< n2; b++)
+                R[b] = arr[m + 1 + b];
+            int i = 0, j = 0, k = l;
+            while (i < n1 && j < n2)
             {
-                arr[count] = Convert.ToInt32(data);
-                count++;
-                Console.WriteLine(data);
-            }
-            if (list.Count > 1)
-            {
-                int half = list.Count / 2;
-                List<string> left = list.GetRange(0, half);
-                List<string> right = list.GetRange(half, list.Count - half);
-
-                Console.WriteLine(left);
-                Console.WriteLine(right);
-
-                int i = 0, j = 0, k = 0;
-                while (i < left.Count && j < right.Count)
+                if (L[i] <= R[j])
                 {
-                    if (left[i].CompareTo(right[j]) < 0)
-                    {
-                        list[k] = left[i];
-                        i++;
-                    }
-                    else
-                    {
-                        list[k] = right[j];
-                        j++;
-                    }
-                    k++;
-                }
-
-                while (i < left.Count)
-                {
-                    list[k] = left[i];
+                    arr[k] = L[i];
                     i++;
-                    k++;
                 }
-
-                while (j < right.Count)
+                else
                 {
-                    list[k] = right[j];
+                    arr[k] = R[j];
                     j++;
-                    k++;
                 }
+                k++;
+            }
+            while (i < n1)
+            {
+                arr[k] = L[i];
+                i++;
+                k++;
+            }
+            while (j < n2)
+            {
+                arr[k] = R[j];
+                j++;
+                k++;
+            }
+        }
+        public void Sort(int[] arr, int l, int r)
+        {
+            if (l < r)
+            {
+                int m = l + (r - l) / 2;
+                Sort(arr, l, m);
+                Sort(arr, m + 1, r);
+                Merge(arr, l, m, r);
+            }
+        }
+        public void ReadFile(String filePath)
+        {
+            String readFile = File.ReadAllText(filePath);
+            String[] words = readFile.Split(" ");
+            int[] numbers = new int[words.Length];
+            int z = 0;
+            foreach (String data in words)
+            {
+                numbers[z] = Convert.ToInt32(data);
+                z++;
+            }
+            Sort(numbers, 0, words.Length - 1);
+            foreach (int data in numbers)
+            {
+                Console.Write(data + " ");
             }
         }
     }
 }
+

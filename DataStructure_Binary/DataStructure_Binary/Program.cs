@@ -8,7 +8,7 @@ class program
         bool flag = true;
         while (flag) 
         {
-            Console.WriteLine("1.BinarySearch\n2.InsertionSort\n3.BubbleSort\n4.Mergesort\n5.Anagram \n6.PrimeNumbers \n7.PrimeNumbers_Anagram_Palindrome\n8.CustomizeString \n9.LinkedListOperation\n10.OrderedList\n11.Simple_Balanced_Parentheses\n12.SimulateBankingCashCounter");
+            Console.WriteLine("\n1.BinarySearch\n2.InsertionSort\n3.BubbleSort\n4.Mergesort\n5.Anagram \n6.PrimeNumbers \n7.PrimeNumbers_Anagram_Palindrome\n8.CustomizeString \n9.LinkedListOperation\n10.OrderedList\n11.Simple_Balanced_Parentheses\n12.SimulateBankingCashCounter");
             Console.WriteLine("select option to get output");
             int option=Convert.ToInt32(Console.ReadLine());
             switch(option)
